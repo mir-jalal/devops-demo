@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Application</title>
+</head>
+<body>
+<h1 th:text="'Welcome to Demo Application'"></h1>
+
+<h2>Messages:</h2>
+<ul>
+    <li th:each="message : ${messages}" th:text="${message.text}"></li>
+</ul>
+
+<hr/>
+
+<form action="#" th:action="@{/createMessage}" method="post">
+    <input type="text" name="message" placeholder="Enter a new message">
+    <button type="submit">Add Message</button>
+</form>
+</body>
+</html>
